@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools"] #, "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smolder"
+authors = [
+    {name = "Eric Torstenson", email="eric.s.torstenson@vumc.org"},
+    {name = "Morgan Higby-Flowers", email="morgan.e.higby-flowers@vumc.org"},
+    {name = "Jamed Ferreris Vargas", email="jamed.ferreris.vargas@vumc.org"}
+]
+description = "Basic FHIR Summary Helper"
+readme = "README.md"
+requires-python = ">3.7"
+keywords = ["FHIR", "Summary"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+dependencies = ["ncpi_fhir_client @ git+https://github.com/ncpi-fhir/ncpi-fhir-client",
+                "PyYAML",
+                "rich"
+                ]
+
+dynamic = ["version"]
+
+[tool.setuptools.packages.find]
+where = ["smolder"]  # list of folders that contain the packages (["."] by default)
+

@@ -1,0 +1,3 @@
+PyYAML
+ncpi_fhir_client @ git+https://github.com/ncpi-fhir/ncpi-fhir-client
+rich

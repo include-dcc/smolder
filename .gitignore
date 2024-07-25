@@ -1,3 +1,9 @@
+# Key files
+
+# fhir_hosts contains some secret info, so it definitely doesn't belong on git
+fhir_hosts      
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
