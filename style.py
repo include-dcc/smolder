@@ -1,8 +1,9 @@
 css = """
 .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr)); /* Responsive grid */
     gap: .5rem;
+    width:650px;
 }
 .card {
     border: 1px solid #00000069;
