@@ -8,7 +8,7 @@ from collections import defaultdict
 from pathlib import Path
 from ncpi_fhir_client.fhir_client import FhirClient
 from ncpi_fhir_client.host_config import get_host_config
-from summary.report_fhir_counts import summarize_study, AVAILABLE_STUDIES
+from smolder.summary.report_fhir_counts import summarize_study, AVAILABLE_STUDIES
 import yaml
 
 
@@ -30,10 +30,10 @@ def exec():
         server_summaries = {}
         fhir_client = FhirClient(host_config[environ])
 
-        print(f"FHIR Server: {fhir_client.target_service_url}")
+        #print(f"FHIR Server: {fhir_client.target_service_url}")
 
         for study in AVAILABLE_STUDIES:
-            print(f"-------------------{study}--------------------")
+            #print(f"-------------------{study}--------------------")
 
             server_summaries[study] = summarize_study(fhir_client, study)
 
@@ -68,12 +68,14 @@ def exec():
                     final_report[key] = value
 
             report_filename = report_path / f"fhir_summary_{study}.yaml"
+            print(f"{study} summary files created" )
             with report_filename.open("wt") as f:
                 yaml.dump(final_report, f)
-                print(yaml.dump(final_report))
+                # print(yaml.dump(final_report))
+    print('## all summary files created')
 
 
 
 if __name__ == "__main__":
     exec()
-    print('summaries collected')
+   

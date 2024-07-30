@@ -9,3 +9,25 @@ This will install it in a way that will allow your edits to the library to be us
 
 # TODO
 * Action Scripts to run script upon demand
+
+
+# Smolder Notebook
+
+
+### An easy way to run FHIR queries
+
+
+
+### Prerequisites
+* **Jupyter Notebook:**  You'll need Jupyter Notebook installed.  If you don't have it, follow the instructions at [https://jupyter.org/install](https://jupyter.org/install)
+* **Python:**  Ensure you have a compatible version of Python installed. This notebook is designed for Python 3.12.2
+
+## Installation
+1.  **Install Jupyter**
+    ```bash
+    pip install jupterlab
+
+2. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/include-dcc/smolder.git
