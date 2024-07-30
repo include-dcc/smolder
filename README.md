@@ -24,8 +24,6 @@ This will install it in a way that will allow your edits to the library to be us
     ```bash
     pip install jupyterlab
 
-
-
 2. **Clone the repository:**
    ```bash
    git clone https://github.com/include-dcc/smolder.git
