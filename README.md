@@ -28,8 +28,33 @@ This will install it in a way that will allow your edits to the library to be us
    ```bash
    git clone https://github.com/include-dcc/smolder.git
 
-## Use
+## Setting Up the `fhir_hosts` File
 
+### 1. Obtain the Necessary Secret
+
+1. To create a valid `fhir_hosts` file, you'll need to obtain a secret that includes the credentials and other information necessary to authenticate with the FHIR server. You can request these credentials by contacting Singh, Natasha at <SINGHN4@chop.edu>.
+
+### 2. Create the `fhir_hosts` File
+1. create file named `fhir_hosts` in the smolder root directory
+2. copy and paste the text below in the `fhir_hosts` file
+3. replace [replace me] with the acquired credintials
+
+```yaml
+QA:
+    auth_type: "auth_kf_openid"
+    client_id: "[replace me]"
+    client_secret: "[replace me]"
+    token_url: "[replace me]"
+    target_service_url: "https://include-api-fhir-service-upgrade-qa.includedcc.org"
+    
+PROD:
+    auth_type: "auth_kf_openid"
+    client_id: "[replace me]"
+    client_secret: "[replace me]"
+    token_url: "[replace me]"
+    target_service_url: "https://include-api-fhir-service-upgrade.includedcc.org"
+
+## Use
 1. **Navigate to smolder directory**
     ```bash
     cd smolder
