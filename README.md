@@ -53,7 +53,7 @@ PROD:
     client_secret: "[replace me]"
     token_url: "[replace me]"
     target_service_url: "https://include-api-fhir-service-upgrade.includedcc.org"
-
+```
 ## Use
 1. **Navigate to smolder directory**
     ```bash
