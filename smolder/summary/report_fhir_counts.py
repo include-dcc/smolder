@@ -292,7 +292,63 @@ def summarize_study(fhir_client, study):
         "Document References.Registered",
         summary,
     )
+    #Adding Conditions data - usually populates at the top of the file bc alphabetical order. 
+    #I will change these once I get a list of standard codes to check for each study and then will be solidified. 
+    report_count(
+        fhir_client,
+        f"Condition?_tag={study}&code=HP:0001671&_summary=count",
+        "Conditions.Abnormal_cardiac_septum_morphology",
+        summary,
+    )
+    report_count(
+        fhir_client,
+        f"Condition?_tag={study}&code=MONDO:0002078&_summary=count",
+        "Conditions.heart_septal_defect",
+        summary,
 
+    ) 
+    report_count(
+        fhir_client,
+        f"Condition?_tag={study}&code=HP:0001629&_summary=count",
+        "Conditions.ventricular_septal_defect",
+        summary,
+
+    ) 
+    report_count(
+        fhir_client,
+        f"Condition?_tag={study}&code=MONDO:0002070&_summary=count",
+        "Conditions.mondo_ventricular_septal_defect",
+        summary,
+
+    ) 
+    report_count(
+        fhir_client,
+        f"Condition?_tag={study}&code=HP:0001631&_summary=count",
+        "Conditions.Atrial_septal_defect",
+        summary,
+
+    )
+    report_count(
+        fhir_client,
+        f"Condition?_tag={study}&code=HP:0006695&_summary=count",
+        "Conditions.Atrioventricular_canal_defect",
+        summary,
+
+    )  
+    report_count(
+        fhir_client,
+        f"Condition?_tag={study}&code=MONDO:0859565&_summary=count",
+        "Conditions.mondo_Atrioventricular_canal_defect",
+        summary,
+
+    ) 
+    report_count(
+        fhir_client,
+        f"Condition?_tag={study}&code=MONDO:0008608&_summary=count",
+        "Conditions.mondo_Down_Syndrome",
+        summary,
+
+    ) 
     # Because the defaultdict seems to be overly complex for YAML to handle,
     # we have to strip it down to a very basic dictionary. There is probaby
     # some way to clarify to it that we don't want to treat those differently,
