@@ -6,6 +6,7 @@ from collections import defaultdict
 from pathlib import Path
 import yaml
 
+#Can add new studies as they come available by adding their STUDY CODE to the list below:
 AVAILABLE_STUDIES = [
     "ABC-DS",
     "BrainPower",
@@ -292,60 +293,73 @@ def summarize_study(fhir_client, study):
         "Document References.Registered",
         summary,
     )
-    #Adding Conditions data - usually populates at the top of the file bc alphabetical order. 
-    #I will change these once I get a list of standard codes to check for each study and then will be solidified. 
+    #Adding Conditions data - populates at the top of the file bc alphabetical order. 
+    #After receiving a representative list of codes, I've updated them below if other codes are required, they can be modified again. 
     report_count(
         fhir_client,
-        f"Condition?_tag={study}&code=HP:0001671&_summary=count",
-        "Conditions.Abnormal_cardiac_septum_morphology",
+        f"Condition?_tag={study}&code=MONDO:0005083&_summary=count",
+        "Conditions.psoriasis (MONDO:0005083)",
         summary,
     )
     report_count(
         fhir_client,
-        f"Condition?_tag={study}&code=MONDO:0002078&_summary=count",
-        "Conditions.heart_septal_defect",
+        f"Condition?_tag={study}&code=HP:000739&_summary=count",
+        "Conditions.Anxiety (HP:000739)",
+        summary,
+    )
+    report_count(
+        fhir_client,
+        f"Condition?_tag={study}&code=HP:0003765&_summary=count",
+        "Conditions.Psoriasiform dermatitis (HP:0003765)",
         summary,
 
     ) 
     report_count(
         fhir_client,
-        f"Condition?_tag={study}&code=HP:0001629&_summary=count",
-        "Conditions.ventricular_septal_defect",
+        f"Condition?_tag={study}&code=HP:0010535&_summary=count",
+        "Conditions.Sleep apnea (HP:0010535",
         summary,
 
     ) 
     report_count(
         fhir_client,
-        f"Condition?_tag={study}&code=MONDO:0002070&_summary=count",
-        "Conditions.mondo_ventricular_septal_defect",
+        f"Condition?_tag={study}&code=MONDO:0005296&_summary=count",
+        "Conditions.sleep apnea syndrome (MONDO:0005296)",
         summary,
 
     ) 
     report_count(
         fhir_client,
         f"Condition?_tag={study}&code=HP:0001631&_summary=count",
-        "Conditions.Atrial_septal_defect",
+        "Conditions.Atrial septal defect (HP:0001631)",
         summary,
 
     )
     report_count(
         fhir_client,
-        f"Condition?_tag={study}&code=HP:0006695&_summary=count",
-        "Conditions.Atrioventricular_canal_defect",
+        f"Condition?_tag={study}&code=HP:0002099&_summary=count",
+        "Conditions.Asthma (HP:0002099)",
+        summary,
+
+    )
+    report_count(
+        fhir_client,
+        f"Condition?_tag={study}&code=HP:0000872&_summary=count",
+        "Conditions.Hashimoto thyroiditis (HP:0000872)",
         summary,
 
     )  
     report_count(
         fhir_client,
-        f"Condition?_tag={study}&code=MONDO:0859565&_summary=count",
-        "Conditions.mondo_Atrioventricular_canal_defect",
+        f"Condition?_tag={study}&code=MONDO:0007699&_summary=count",
+        "Conditions.hashimoto thyroiditis (MONDO:0007699)",
         summary,
 
     ) 
     report_count(
         fhir_client,
         f"Condition?_tag={study}&code=MONDO:0008608&_summary=count",
-        "Conditions.mondo_Down_Syndrome",
+        "Conditions.Down syndrome (MONDO:0008608)",
         summary,
 
     ) 
